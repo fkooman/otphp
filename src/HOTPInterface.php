@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 /*
  * The MIT License (MIT)
  *
@@ -10,7 +8,6 @@ declare(strict_types=1);
  * This software may be modified and distributed under the terms
  * of the MIT license.  See the LICENSE file for details.
  */
-
 namespace OTPHP;
 
 interface HOTPInterface extends OTPInterface
@@ -20,8 +17,7 @@ interface HOTPInterface extends OTPInterface
      *
      * @return int
      */
-    public function getCounter(): int;
-
+    public function getCounter();
     /**
      * Create a new TOTP object.
      *
@@ -34,5 +30,5 @@ interface HOTPInterface extends OTPInterface
      *
      * @return HOTPInterface
      */
-    public static function create(?string $secret = null, int $counter = 0, string $digest = 'sha1', int $digits = 6): self;
+    public static function create($secret = null, $counter = 0, $digest = 'sha1', $digits = 6);
 }

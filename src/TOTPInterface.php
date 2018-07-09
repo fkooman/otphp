@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 /*
  * The MIT License (MIT)
  *
@@ -10,7 +8,6 @@ declare(strict_types=1);
  * This software may be modified and distributed under the terms
  * of the MIT license.  See the LICENSE file for details.
  */
-
 namespace OTPHP;
 
 interface TOTPInterface extends OTPInterface
@@ -27,24 +24,21 @@ interface TOTPInterface extends OTPInterface
      *
      * @return TOTPInterface
      */
-    public static function create(?string $secret = null, int $period = 30, string $digest = 'sha1', int $digits = 6): self;
-
+    public static function create($secret = null, $period = 30, $digest = 'sha1', $digits = 6);
     /**
      * Return the TOTP at the current time.
      *
      * @return string
      */
-    public function now(): string;
-
+    public function now();
     /**
      * Get the period of time for OTP generation (a non-null positive integer, in second).
      *
      * @return int
      */
-    public function getPeriod(): int;
-
+    public function getPeriod();
     /**
      * @return int
      */
-    public function getEpoch(): int;
+    public function getEpoch();
 }
